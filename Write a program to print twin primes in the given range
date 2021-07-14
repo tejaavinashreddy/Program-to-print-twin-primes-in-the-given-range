@@ -1,0 +1,46 @@
+import java.util.*;  
+class Solution
+{
+static boolean PrimeNumber(int n)  
+    {  
+        int i;  
+        int m = 0;  
+        int flag = 0;        
+        m = n/2;        
+        if(n == 0 || n == 1){    
+            return false;        
+        }else{    
+            for(i = 2; i <= m ;i++){        
+                if(n%i == 0){        
+                    flag=1;        
+                    return false;       
+                }        
+            }        
+            if(flag == 0)    
+            {   
+                return true;  
+            }    
+        }  
+        return false;  
+    }  
+    static boolean TwinPrime(int n1, int n2)  
+    {  
+        if(PrimeNumber(n1) && PrimeNumber(n2) && Math.abs(n1 - n2) == 2)  
+            return true;  
+        else  
+            return false;  
+    }  
+    public static void main(String[] args)  
+    {  
+         int n1, n2;  
+        Scanner sc = new Scanner(System.in);  
+        n1 = sc.nextInt();  
+        n2 = sc.nextInt();  
+        if (TwinPrime(n1, n2))   
+            System.out.println("("+n1 +", "+n2+ ") is a pair of twin primes");   
+        else  
+            System.out.println("("+n1 +", "+n2+ ") is not a pair of twin primes");   
+          
+    }  
+}  
+
